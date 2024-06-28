@@ -1,1 +1,43 @@
+import java.awt.*;
+import java.awt.event.*;
 
+public class LoginForm extends Frame implements ActionListener {
+    Label lblUsername, lblPassword;
+    TextField tfUsername, tfPassword;
+    Button btnLogin, btnRegister;
+
+    public LoginForm() {
+        lblUsername = new Label("Username:");
+        lblPassword = new Label("Password:");
+        tfUsername = new TextField();
+        tfPassword = new TextField();
+        tfPassword.setEchoChar('\u25CF'); // 
+        btnLogin = new Button("Login");
+        btnRegister = new Button("Register");
+
+        setLayout(new GridLayout(4, 2));
+        setBackground(new Color(255,218,232)); 
+
+        lblUsername.setFont(new Font("Serif", Font.BOLD, 16));
+        lblPassword.setFont(new Font("Serif", Font.BOLD, 16));
+
+        tfUsername.setFont(new Font("Arial", Font.PLAIN, 16));
+        tfPassword.setFont(new Font("Arial", Font.PLAIN, 16));
+
+        btnLogin.setFont(new Font("Arial", Font.BOLD, 16));
+        btnLogin.setBackground(new Color(173,216,230)); 
+        btnLogin.setForeground(Color.black);
+
+        btnRegister.setFont(new Font("Arial", Font.BOLD, 16));
+        btnRegister.setBackground(new Color(255,105,180)); 
+        btnRegister.setForeground(Color.black);
+
+        add(lblUsername);
+        add(tfUsername);
+        add(lblPassword);
+        add(tfPassword);
+        add(btnLogin);
+        add(btnRegister);
+
+        btnLogin.addActionListener(this);
+        btnRegister.addActionListener(this);
